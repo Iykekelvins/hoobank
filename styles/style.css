@@ -63,12 +63,18 @@ button {
   justify-content: center;
   padding: 0 2rem;
   height: 4rem;
+  white-space: nowrap;
   background: linear-gradient(157.81deg, #def9fa -43.27%, #bef3f5 -21.24%, #9dedf0 12.19%, #7de7eb 29.82%, #5ce1e6 51.94%, #33bbcf 90.29%);
   border-radius: 10px;
   color: #00040e;
   font-size: 1.125rem;
   font-weight: 500;
   margin-top: 3rem;
+}
+@media (max-width: 768px) {
+  .get-started, .service button, .card-deal-left button, .handle-left button {
+    width: 100%;
+  }
 }
 
 .nav-header {
@@ -80,6 +86,18 @@ button {
   align-items: center;
   justify-content: space-between;
   padding: 2.25rem 8.5rem;
+}
+@media (max-width: 992px) {
+  .nav-header-navbar {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+@media (max-width: 768px) {
+  .nav-header-navbar {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 .nav-header-navbar .logo {
   display: flex;
@@ -122,7 +140,8 @@ button {
   display: flex;
   align-items: center;
   gap: 1rem;
-  background: linear-gradient(125.17deg, #272727 0%, #11101d 100%);
+  white-space: nowrap;
+  background: linear-gradient(-125.17deg, #272727 0%, #11101d 100%);
   border-radius: 10px;
   width: -moz-fit-content;
   width: fit-content;
@@ -211,6 +230,11 @@ button {
   width: 100px;
   height: 300px;
 }
+@media (max-width: 992px) {
+  .hero-left-text::before {
+    display: none;
+  }
+}
 .hero-left-info {
   margin-top: 2.5rem;
 }
@@ -220,6 +244,27 @@ button {
   font-weight: 400;
   line-height: 1.9rem;
   max-width: 30.188rem;
+}
+@media (max-width: 992px) {
+  .hero-left {
+    padding-left: 4rem;
+  }
+  .hero-left .btn-cover {
+    margin-top: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .hero-left {
+    padding-left: 2rem;
+  }
+  .hero-left .hero-right-top {
+    display: none;
+  }
+}
+@media (max-width: 375px) {
+  .hero-left .btn-cover {
+    position: unset;
+  }
 }
 .hero-right-top {
   position: relative;
@@ -307,6 +352,28 @@ button {
   background-clip: text;
   text-fill-color: transparent;
 }
+@media (max-width: 992px) {
+  .hero-stats {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .hero-stats svg {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .hero-stats {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .hero .hero-right {
+    display: none;
+  }
+}
 
 .section {
   margin-top: 10.625rem;
@@ -327,6 +394,20 @@ button {
   font-weight: 400;
   line-height: 1.9rem;
   padding-top: 1rem;
+}
+@media (max-width: 992px) {
+  .section {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+@media (max-width: 768px) {
+  .section {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    flex-direction: column;
+    gap: 4.5rem;
+  }
 }
 
 .handle-left p {
@@ -407,6 +488,11 @@ button {
 .billing-right-stores img {
   height: 2.688rem;
 }
+@media (max-width: 768px) {
+  .billing-right-stores {
+    justify-content: center;
+  }
+}
 
 .card-deal-left p {
   max-width: 31.25rem;
@@ -415,15 +501,27 @@ button {
   background-image: url(../assets/elipses.svg);
   background-position: center center;
   background-repeat: no-repeat;
+  background-size: contain;
 }
 .card-deal-right img {
-  margin-top: 7rem;
-  height: 20rem;
+  margin-top: 11rem;
+  height: 25rem;
+}
+@media (max-width: 768px) {
+  .card-deal {
+    flex-direction: column-reverse;
+  }
 }
 
 .testimonial-intro p {
   max-width: 28.125rem;
   margin-right: 6rem;
+}
+@media (max-width: 768px) {
+  .testimonial-intro p {
+    margin-right: 0;
+    margin-top: -4.5rem;
+  }
 }
 
 .testimonials {
@@ -431,6 +529,7 @@ button {
   padding: 0 8.5rem;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .testimonials li {
   padding: 3.75rem 2.5rem;
@@ -459,6 +558,9 @@ button {
   position: absolute;
   bottom: 3.75rem;
 }
+.testimonials li .user img {
+  height: 3rem;
+}
 .testimonials li .user h4 {
   color: #ffffff;
   font-size: 1.25rem;
@@ -470,13 +572,42 @@ button {
   opacity: 0.5;
   font-weight: 400;
 }
+@media (max-width: 992px) {
+  .testimonials {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+@media (max-width: 768px) {
+  .testimonials {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    justify-content: center;
+  }
+}
 
 .partners {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin-top: 6.5rem;
   padding: 0 11.5rem;
+}
+@media (max-width: 992px) {
+  .partners {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    gap: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .partners {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    justify-content: center;
+    gap: 4rem;
+  }
 }
 
 .service {
@@ -502,6 +633,21 @@ button {
   padding-top: 1rem;
   max-width: 27.813rem;
 }
+@media (max-width: 992px) {
+  .service {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+}
+@media (max-width: 768px) {
+  .service {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    flex-direction: column;
+  }
+}
 
 .footer {
   margin-top: 5.125rem;
@@ -525,6 +671,14 @@ button {
 .footer-top div {
   margin-top: 1rem;
 }
+@media (max-width: 768px) {
+  .footer-top div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+  }
+}
 .footer-top ul li {
   margin-bottom: 0.75rem;
 }
@@ -540,6 +694,12 @@ button {
   color: #ffffff;
   font-size: 1.125rem;
   font-weight: 500;
+}
+@media (max-width: 768px) {
+  .footer-top ul li:first-child {
+    margin-bottom: 0.75rem;
+    margin-top: 1.5rem;
+  }
 }
 .footer-bottom {
   padding-top: 1.875rem;
@@ -564,4 +724,25 @@ button {
   display: flex;
   align-items: center;
   gap: 1.875rem;
+}
+@media (max-width: 992px) {
+  .footer {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+@media (max-width: 768px) {
+  .footer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .footer .footer-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer .footer-bottom {
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+  }
 }/*# sourceMappingURL=style.css.map */
