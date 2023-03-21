@@ -23,6 +23,27 @@ button {
   font-family: inherit;
   cursor: pointer;
 }
+.get-started {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  height: 64px;
+  background: linear-gradient(
+    157.81deg,
+    #def9fa -43.27%,
+    #bef3f5 -21.24%,
+    #9dedf0 12.19%,
+    #7de7eb 29.82%,
+    #5ce1e6 51.94%,
+    #33bbcf 90.29%
+  );
+  border-radius: 10px;
+  color: #00040e;
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-top: 3rem;
+}
 
 .nav-header {
   position: sticky;
@@ -323,25 +344,7 @@ button {
       max-width: 35.625rem;
     }
     button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 2rem;
-      height: 64px;
-      background: linear-gradient(
-        157.81deg,
-        #def9fa -43.27%,
-        #bef3f5 -21.24%,
-        #9dedf0 12.19%,
-        #7de7eb 29.82%,
-        #5ce1e6 51.94%,
-        #33bbcf 90.29%
-      );
-      border-radius: 10px;
-      color: #00040e;
-      font-size: 1.125rem;
-      font-weight: 500;
-      margin-top: 3rem;
+      @extend .get-started;
     }
   }
   &-right {
@@ -419,6 +422,25 @@ button {
       align-items: center;
       gap: 2rem;
       margin-top: 3rem;
+    }
+  }
+}
+
+.card-deal {
+  &-left {
+    button {
+      @extend .get-started;
+    }
+    p {
+      max-width: 31.25rem;
+    }
+  }
+  &-right {
+    background-image: url(../assets/elipses.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    img {
+      margin-top: 7rem;
     }
   }
 }

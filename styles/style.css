@@ -19,6 +19,20 @@ button {
   cursor: pointer;
 }
 
+.get-started, .card-deal-left button, .handle-left button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  height: 64px;
+  background: linear-gradient(157.81deg, #def9fa -43.27%, #bef3f5 -21.24%, #9dedf0 12.19%, #7de7eb 29.82%, #5ce1e6 51.94%, #33bbcf 90.29%);
+  border-radius: 10px;
+  color: #00040e;
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-top: 3rem;
+}
+
 .nav-header {
   position: sticky;
   background: #00040f;
@@ -272,19 +286,6 @@ button {
 .handle-left p {
   max-width: 35.625rem;
 }
-.handle-left button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 2rem;
-  height: 64px;
-  background: linear-gradient(157.81deg, #def9fa -43.27%, #bef3f5 -21.24%, #9dedf0 12.19%, #7de7eb 29.82%, #5ce1e6 51.94%, #33bbcf 90.29%);
-  border-radius: 10px;
-  color: #00040e;
-  font-size: 1.125rem;
-  font-weight: 500;
-  margin-top: 3rem;
-}
 .handle-right li {
   display: flex;
   gap: 1.25rem;
@@ -352,4 +353,16 @@ button {
   align-items: center;
   gap: 2rem;
   margin-top: 3rem;
+}
+
+.card-deal-left p {
+  max-width: 31.25rem;
+}
+.card-deal-right {
+  background-image: url(../assets/elipses.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.card-deal-right img {
+  margin-top: 7rem;
 }/*# sourceMappingURL=style.css.map */
