@@ -252,6 +252,7 @@ button {
   margin-top: 10.625rem;
   padding: 0 8.5rem;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 .section h2 {
@@ -308,16 +309,40 @@ button {
   max-width: 22.875rem;
 }
 
-.billing-left img {
+.billing-left {
+  position: relative;
+}
+.billing-left > img {
   display: block;
 }
-.billing-left img:first-child {
+.billing-left > img:first-child {
   margin-left: 14rem;
 }
-.billing-left img:nth-child(2) {
+.billing-left > img:nth-child(2) {
   position: relative;
   margin-top: -6rem;
   z-index: -1;
+}
+.billing-left div {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  background: #ffffff;
+  box-shadow: 0px 10px 30px rgba(40, 48, 63, 0.25);
+  border-radius: 10px;
+  padding: 0.875rem 1.25rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  right: 0;
+  bottom: -1.5rem;
+}
+.billing-left div img {
+  margin-left: 0;
+}
+.billing-left div h5 {
+  color: #080915;
+  font-size: 0.875rem;
 }
 .billing-right p {
   max-width: 29.375rem;

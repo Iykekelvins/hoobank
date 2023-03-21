@@ -297,6 +297,7 @@ button {
   margin-top: 10.625rem;
   padding: 0 $padding;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   h2 {
     color: #ffffff;
@@ -376,7 +377,8 @@ button {
 
 .billing {
   &-left {
-    img {
+    position: relative;
+    & > img {
       display: block;
       &:first-child {
         margin-left: 14rem;
@@ -385,6 +387,26 @@ button {
         position: relative;
         margin-top: -6rem;
         z-index: -1;
+      }
+    }
+    div {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      background: #ffffff;
+      box-shadow: 0px 10px 30px rgba(40, 48, 63, 0.25);
+      border-radius: 10px;
+      padding: 0.875rem 1.25rem;
+      width: fit-content;
+      position: absolute;
+      right: 0;
+      bottom: -1.5rem;
+      img {
+        margin-left: 0;
+      }
+      h5 {
+        color: #080915;
+        font-size: 0.875rem;
       }
     }
   }
