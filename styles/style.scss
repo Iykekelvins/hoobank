@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
 
 * {
   padding: 0;
@@ -544,6 +545,113 @@ button {
         opacity: 0.5;
         font-weight: 400;
       }
+    }
+  }
+}
+
+.partners {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6.5rem;
+  padding: 0 11.5rem;
+}
+
+.service {
+  margin: 6.5rem $padding;
+  padding: 4.5rem 6.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(
+    -144.39deg,
+    #ffffff -278.56%,
+    #6d6d6d -78.47%,
+    #11101d 91.61%
+  );
+  // backdrop-filter: blur(5px);
+
+  border-radius: 20px;
+  button {
+    @extend .get-started;
+  }
+  h2 {
+    color: #ffffff;
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 4.8rem;
+  }
+  p {
+    color: $light-grey;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.9rem;
+    padding-top: 1rem;
+    max-width: 27.813rem;
+  }
+}
+
+.footer {
+  margin-top: 5.125rem;
+  background: rgba(11, 10, 12, 0.6);
+  padding: 4.5rem $padding 1.875rem;
+  &-top {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #3f3e45;
+    padding-bottom: 2.5rem;
+    p {
+      color: $light-grey;
+      font-size: 1.125rem;
+      font-weight: 400;
+      line-height: 1.9rem;
+      padding-top: 1rem;
+      max-width: 19.5rem;
+    }
+    div {
+      margin-top: 1rem;
+    }
+    ul {
+      li {
+        margin-bottom: 0.75rem;
+        a {
+          color: $light-grey;
+          font-size: 1rem;
+          font-weight: 400;
+        }
+        &:first-child {
+          margin-bottom: 1.5rem;
+          a {
+            color: #ffffff;
+            font-size: 1.125rem;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+  &-bottom {
+    padding-top: 1.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      h4 {
+        color: $light-grey;
+        font-size: 1.125rem;
+        font-weight: 400;
+        &:first-child {
+          font-family: "Abel", sans-serif;
+        }
+      }
+    }
+    &-right {
+      display: flex;
+      align-items: center;
+      gap: 1.875rem;
     }
   }
 }
