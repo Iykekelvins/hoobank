@@ -10,6 +10,13 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+button {
+  background: transparent;
+  outline: none;
+  border: none;
+  font-family: inherit;
+}
+
 .nav-header {
   position: sticky;
   background: #00040f;
@@ -46,4 +53,100 @@ body {
 }
 .nav-header-navbar ul a:hover {
   color: rgba(255, 255, 255, 0.7);
+}
+
+.hero {
+  margin-top: 4.375rem;
+  padding: 0 8.5rem;
+}
+.hero-left-discount {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(125.17deg, #272727 0%, #11101d 100%);
+  border-radius: 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.375rem 0.625rem;
+  height: 40px;
+}
+.hero-left-discount h4 {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+.hero-left-discount h4 span {
+  color: #ffffff;
+}
+.hero-left-text {
+  margin-top: 1.5rem;
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.hero-left-text h1 {
+  color: #ffffff;
+  font-size: 4.5rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.hero-left-text h1 span {
+  background: radial-gradient(64.18% 64.18% at 71.16% 35.69%, #def9fa 0.89%, #bef3f5 17.23%, #9dedf0 42.04%, #7de7eb 55.12%, #5ce1e6 71.54%, #33bbcf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.hero-left-text .btn-cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: linear-gradient(157.81deg, #def9fa -43.27%, #bef3f5 -21.24%, #9dedf0 12.19%, #7de7eb 29.82%, #5ce1e6 51.94%, #33bbcf 90.29%);
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+}
+.hero-left-text .btn-cover-inner {
+  background: #00040f;
+  height: 138px;
+  width: 138px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-left-text .btn-cover button {
+  line-height: 0.7;
+}
+.hero-left-text .btn-cover button div {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+.hero-left-text .btn-cover button span {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+.hero-left-text .btn-cover button span:first-child {
+  background: linear-gradient(157.81deg, #def9fa -43.27%, #bef3f5 -21.24%, #9dedf0 12.19%, #7de7eb 29.82%, #5ce1e6 51.94%, #33bbcf 90.29%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.hero-left-text .btn-cover button span:last-child {
+  color: rgb(92, 225, 230);
+}
+.hero-left-info {
+  margin-top: 2.5rem;
+}
+.hero-left-info p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 30.6px;
+  max-width: 30.188rem;
 }/*# sourceMappingURL=style.css.map */
