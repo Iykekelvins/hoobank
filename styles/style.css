@@ -365,4 +365,12 @@ button {
 }
 .card-deal-right img {
   margin-top: 7rem;
+}
+
+.testimonials {
+  justify-content: unset;
+  gap: 26.125rem;
+}
+.testimonials p {
+  max-width: 28.125rem;
 }/*# sourceMappingURL=style.css.map */

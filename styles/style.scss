@@ -444,3 +444,11 @@ button {
     }
   }
 }
+
+.testimonials {
+  justify-content: unset;
+  gap: 26.125rem;
+  p {
+    max-width: 28.125rem;
+  }
+}
