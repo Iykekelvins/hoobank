@@ -8,6 +8,7 @@
 body {
   background: #00040f;
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 
 button {
@@ -15,6 +16,7 @@ button {
   outline: none;
   border: none;
   font-family: inherit;
+  cursor: pointer;
 }
 
 .nav-header {
@@ -56,8 +58,12 @@ button {
 }
 
 .hero {
+  display: flex;
+  justify-content: space-between;
+}
+.hero-left {
+  padding-left: 8.5rem;
   margin-top: 4.375rem;
-  padding: 0 8.5rem;
 }
 .hero-left-discount {
   display: flex;
@@ -89,6 +95,7 @@ button {
   font-size: 4.5rem;
   font-weight: 600;
   letter-spacing: 0.01em;
+  line-height: 100.8px;
 }
 .hero-left-text h1 span {
   background: radial-gradient(64.18% 64.18% at 71.16% 35.69%, #def9fa 0.89%, #bef3f5 17.23%, #9dedf0 42.04%, #7de7eb 55.12%, #5ce1e6 71.54%, #33bbcf 100%);
@@ -104,6 +111,7 @@ button {
   width: 140px;
   height: 140px;
   border-radius: 50%;
+  cursor: pointer;
   background: linear-gradient(157.81deg, #def9fa -43.27%, #bef3f5 -21.24%, #9dedf0 12.19%, #7de7eb 29.82%, #5ce1e6 51.94%, #33bbcf 90.29%);
   position: absolute;
   top: 1rem;
@@ -111,8 +119,8 @@ button {
 }
 .hero-left-text .btn-cover-inner {
   background: #00040f;
-  height: 138px;
-  width: 138px;
+  height: 135px;
+  width: 135px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -140,6 +148,16 @@ button {
 .hero-left-text .btn-cover button span:last-child {
   color: rgb(92, 225, 230);
 }
+.hero-left-text::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10rem;
+  background: #ffffff;
+  filter: blur(225px);
+  width: 100px;
+  height: 300px;
+}
 .hero-left-info {
   margin-top: 2.5rem;
 }
@@ -149,4 +167,56 @@ button {
   font-weight: 400;
   line-height: 30.6px;
   max-width: 30.188rem;
+}
+.hero-right-top {
+  position: relative;
+}
+.hero-right-top .vec-one {
+  margin-left: 5rem;
+}
+.hero-right-top-cards {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  margin-top: -5rem;
+}
+.hero-right-top-cards img:first-child {
+  position: relative;
+  z-index: 3;
+}
+.hero-right-top-cards img:nth-child(2) {
+  position: absolute;
+  bottom: -7rem;
+  opacity: 0.7;
+}
+.hero-right-top-cards img:last-child {
+  position: absolute;
+  bottom: -7rem;
+  opacity: 0.5;
+}
+.hero-right-top-cards::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.6);
+  filter: blur(375px);
+  width: 80%;
+  height: 450px;
+}
+.hero-right-top .vec-two {
+  position: absolute;
+  bottom: -9rem;
+  height: 32px;
+  left: 6rem;
+}
+.hero-right-top .vec-three {
+  position: absolute;
+  bottom: -8rem;
+  right: 10rem;
+  height: 68px;
+}
+.hero-right_robot {
+  margin-top: -6rem;
 }/*# sourceMappingURL=style.css.map */
