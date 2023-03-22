@@ -64,12 +64,16 @@ button {
   padding: 0 2rem;
   height: 4rem;
   white-space: nowrap;
+  transition: all 0.3s ease;
   background: linear-gradient(157.81deg, #def9fa -43.27%, #bef3f5 -21.24%, #9dedf0 12.19%, #7de7eb 29.82%, #5ce1e6 51.94%, #33bbcf 90.29%);
   border-radius: 10px;
   color: #00040e;
   font-size: 1.125rem;
   font-weight: 500;
   margin-top: 3rem;
+}
+.get-started:hover, .service button:hover, .card-deal-left button:hover, .handle-left button:hover {
+  border-radius: 60px;
 }
 @media (max-width: 768px) {
   .get-started, .service button, .card-deal-left button, .handle-left button {

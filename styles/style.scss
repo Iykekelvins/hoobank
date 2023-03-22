@@ -61,6 +61,7 @@ button {
   padding: 0 2rem;
   height: 4rem;
   white-space: nowrap;
+  transition: $transition;
   background: linear-gradient(
     157.81deg,
     #def9fa -43.27%,
@@ -75,6 +76,9 @@ button {
   font-size: 1.125rem;
   font-weight: 500;
   margin-top: 3rem;
+  &:hover {
+    border-radius: 60px;
+  }
   @media (max-width: 768px) {
     width: 100%;
   }
