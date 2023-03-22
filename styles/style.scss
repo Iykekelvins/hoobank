@@ -127,6 +127,21 @@ button {
         }
       }
     }
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      span {
+        display: block;
+        width: 2rem;
+        height: 2px;
+        background: #ffffff;
+        transition: $transition;
+      }
+      @media (min-width: 601px) {
+        display: none;
+      }
+    }
   }
 }
 
@@ -150,6 +165,8 @@ button {
       width: fit-content;
       padding: 0.375rem 0.625rem;
       height: 2.5rem;
+      overflow: hidden;
+      max-width: fit-content;
       h4 {
         color: $light-grey;
         font-size: 1.125rem;
@@ -168,8 +185,16 @@ button {
         font-size: 4.5rem;
         font-weight: 600;
         letter-spacing: 0.01em;
-        line-height: 6.3rem;
-        span {
+        line-height: 6.25rem;
+        div {
+          overflow: hidden;
+          span {
+            transform: translateY(100%);
+            opacity: 0;
+          }
+        }
+        .span {
+          display: inline-block;
           background: radial-gradient(
             64.18% 64.18% at 71.16% 35.69%,
             #def9fa 0.89%,
@@ -193,6 +218,7 @@ button {
         height: 8.75rem;
         border-radius: 50%;
         cursor: pointer;
+
         background: linear-gradient(
           157.81deg,
           #def9fa -43.27%,
@@ -221,7 +247,7 @@ button {
             align-items: center;
             gap: 0.375rem;
             img {
-              // padding-top: 1.25rem;
+              transition: $transition;
             }
           }
           span {
@@ -245,6 +271,11 @@ button {
             &:last-child {
               color: rgba(92, 225, 230, 1);
             }
+          }
+        }
+        &:hover {
+          img {
+            transform: rotate(90deg);
           }
         }
       }
@@ -459,6 +490,7 @@ button {
       transition: $transition;
       border-radius: 20px;
       background: transparent;
+      transform: translateY(100%);
       &:hover {
         background: linear-gradient(
           144.39deg,
@@ -479,6 +511,17 @@ button {
         padding-top: 0.25rem;
         line-height: 1.5rem;
         max-width: 22.875rem;
+      }
+      .icon {
+        height: 64px;
+        width: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // background: rgba(9, 151, 124, 0.1);
+        border-radius: 50%;
+        animation: glow 1.2s infinite linear alternate;
+        // transition: $transition;
       }
     }
   }
@@ -792,5 +835,36 @@ button {
       flex-direction: column-reverse;
       gap: 1.5rem;
     }
+  }
+}
+
+.cursor {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background: #33bbcf;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+  transition-property: background, transform;
+  transform-origin: 75% 75%;
+  mix-blend-mode: difference;
+  z-index: 5;
+  @media (max-width: 820px) {
+    display: none;
+  }
+}
+
+.word {
+  overflow: hidden;
+}
+
+@keyframes glow {
+  0% {
+    background: rgba(9, 151, 124, 0.1);
+  }
+  100% {
+    background: rgba(9, 151, 124, 0);
   }
 }

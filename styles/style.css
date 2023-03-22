@@ -130,6 +130,23 @@ button {
 .nav-header-navbar ul a:hover {
   color: rgba(255, 255, 255, 0.7);
 }
+.nav-header-navbar .hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.nav-header-navbar .hamburger span {
+  display: block;
+  width: 2rem;
+  height: 2px;
+  background: #ffffff;
+  transition: all 0.3s ease;
+}
+@media (min-width: 601px) {
+  .nav-header-navbar .hamburger {
+    display: none;
+  }
+}
 
 .hero-top {
   display: flex;
@@ -151,6 +168,9 @@ button {
   width: fit-content;
   padding: 0.375rem 0.625rem;
   height: 2.5rem;
+  overflow: hidden;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
 }
 .hero-left-discount h4 {
   color: rgba(255, 255, 255, 0.7);
@@ -171,9 +191,17 @@ button {
   font-size: 4.5rem;
   font-weight: 600;
   letter-spacing: 0.01em;
-  line-height: 6.3rem;
+  line-height: 6.25rem;
 }
-.hero-left-text h1 span {
+.hero-left-text h1 div {
+  overflow: hidden;
+}
+.hero-left-text h1 div span {
+  transform: translateY(100%);
+  opacity: 0;
+}
+.hero-left-text h1 .span {
+  display: inline-block;
   background: radial-gradient(64.18% 64.18% at 71.16% 35.69%, #def9fa 0.89%, #bef3f5 17.23%, #9dedf0 42.04%, #7de7eb 55.12%, #5ce1e6 71.54%, #33bbcf 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -210,6 +238,9 @@ button {
   align-items: center;
   gap: 0.375rem;
 }
+.hero-left-text .btn-cover button div img {
+  transition: all 0.3s ease;
+}
 .hero-left-text .btn-cover button span {
   font-size: 1.125rem;
   font-weight: 500;
@@ -223,6 +254,9 @@ button {
 }
 .hero-left-text .btn-cover button span:last-child {
   color: rgb(92, 225, 230);
+}
+.hero-left-text .btn-cover:hover img {
+  transform: rotate(90deg);
 }
 .hero-left-text::before {
   content: "";
@@ -424,6 +458,7 @@ button {
   transition: all 0.3s ease;
   border-radius: 20px;
   background: transparent;
+  transform: translateY(100%);
 }
 .handle-right li:hover {
   background: linear-gradient(144.39deg, #ffffff -278.56%, #6d6d6d -78.47%, #11101d 91.61%);
@@ -441,6 +476,15 @@ button {
   padding-top: 0.25rem;
   line-height: 1.5rem;
   max-width: 22.875rem;
+}
+.handle-right li .icon {
+  height: 64px;
+  width: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  animation: glow 1.2s infinite linear alternate;
 }
 
 .billing-left {
@@ -748,5 +792,38 @@ button {
   .footer .footer-bottom {
     flex-direction: column-reverse;
     gap: 1.5rem;
+  }
+}
+
+.cursor {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background: #33bbcf;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+  transition-property: background, transform;
+  transform-origin: 75% 75%;
+  mix-blend-mode: difference;
+  z-index: 5;
+}
+@media (max-width: 820px) {
+  .cursor {
+    display: none;
+  }
+}
+
+.word {
+  overflow: hidden;
+}
+
+@keyframes glow {
+  0% {
+    background: rgba(9, 151, 124, 0.1);
+  }
+  100% {
+    background: rgba(9, 151, 124, 0);
   }
 }/*# sourceMappingURL=style.css.map */
