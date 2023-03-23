@@ -83,15 +83,15 @@ button {
 
 .nav-header {
   position: sticky;
-  background: rgba(0, 4, 15, 0.5);
   z-index: 4;
   top: 0;
+  transition: all 0.3s ease;
 }
 .nav-header-navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2.25rem 8.5rem;
+  padding: 1.25rem 8.5rem;
 }
 @media (max-width: 992px) {
   .nav-header-navbar {
@@ -185,6 +185,9 @@ button {
   height: 2px;
   background: #ffffff;
   transition: all 0.3s ease;
+}
+.nav-header.bg {
+  background: rgba(0, 4, 15, 0.5);
 }
 
 .mobile-menu {
@@ -380,8 +383,27 @@ button {
   }
 }
 @media (max-width: 375px) {
+  .hero-left {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding-left: 0;
+  }
+  .hero-left p {
+    padding: 0 2rem;
+  }
   .hero-left .btn-cover {
-    position: unset;
+    display: none;
+  }
+  .hero-left button {
+    margin: 2rem auto 0;
+    width: 90%;
+  }
+}
+@media (min-width: 375px) {
+  .hero-left .get-started, .hero-left .service button, .service .hero-left button, .hero-left .card-deal-left button, .card-deal-left .hero-left button, .hero-left .handle-left button, .handle-left .hero-left button {
+    display: none;
   }
 }
 .hero-right-top {
@@ -506,9 +528,6 @@ button {
   font-weight: 600;
   line-height: 3.8rem;
 }
-.section h2 .char {
-  opacity: 0;
-}
 @media (max-width: 375px) {
   .section h2 {
     font-size: 1.875rem;
@@ -583,6 +602,9 @@ button {
   border-radius: 50%;
   animation: glow 1.2s infinite linear alternate;
 }
+.handle .char {
+  opacity: 0;
+}
 
 .billing-left {
   position: relative;
@@ -647,6 +669,9 @@ button {
     text-align: center;
   }
 }
+.billing .char {
+  opacity: 0;
+}
 
 .card-deal-left p {
   max-width: 31.25rem;
@@ -695,6 +720,9 @@ button {
     margin-right: 0;
     margin-top: -4.5rem;
   }
+}
+.testimonial-intro .char {
+  opacity: 0;
 }
 
 .testimonials {
@@ -899,9 +927,15 @@ button {
   color: rgba(255, 255, 255, 0.7);
   font-size: 1.125rem;
   font-weight: 400;
+  white-space: nowrap;
 }
 .footer-bottom-left h4:first-child {
   font-family: "Abel", sans-serif;
+}
+@media (max-width: 375px) {
+  .footer-bottom-left h4 {
+    font-size: 1rem;
+  }
 }
 .footer-bottom-right {
   display: flex;

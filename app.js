@@ -86,17 +86,28 @@ heroTl.fromTo(
   // "-=0.5"
 );
 
+heroTl.fromTo(
+  ".hero-left p",
+  {
+    y: 100,
+    opacity: 0,
+  },
+  {
+    y: 0,
+    opacity: 1,
+  },
+  "-=0.5"
+);
+
 ScrollTrigger.create({
   trigger: ".handle",
   start: "top bottom-=100",
   once: true,
   // markers: true,
   onEnter: () => {
-    gsap.fromTo(
+    gsap.to(
       ".handle-left h2 .char",
-      {
-        opacity: 0,
-      },
+
       {
         stagger: 0.03,
         opacity: 1,
@@ -104,11 +115,9 @@ ScrollTrigger.create({
         // duration: 0.05,
       }
     );
-    gsap.fromTo(
+    gsap.to(
       ".handle-left p .char",
-      {
-        opacity: 0,
-      },
+
       {
         stagger: 0.02,
         opacity: 1,
@@ -141,22 +150,18 @@ ScrollTrigger.create({
   once: true,
   // markers: true,
   onEnter: () => {
-    gsap.fromTo(
+    gsap.to(
       ".billing-right h2 .char",
-      {
-        opacity: 0,
-      },
+
       {
         stagger: 0.03,
         opacity: 1,
         ease: "power2.inOut",
       }
     );
-    gsap.fromTo(
+    gsap.to(
       ".billing-right p .char",
-      {
-        opacity: 0,
-      },
+
       {
         stagger: 0.02,
         opacity: 1,
@@ -218,29 +223,17 @@ ScrollTrigger.create({
   once: true,
   // markers: true,
   onEnter: () => {
-    gsap.fromTo(
-      ".testimonial-intro h2 .char",
-      {
-        opacity: 0,
-      },
-      {
-        stagger: 0.03,
-        opacity: 1,
-        ease: "power2.inOut",
-      }
-    );
-    gsap.fromTo(
-      ".testimonial-intro p .char",
-      {
-        opacity: 0,
-      },
-      {
-        stagger: 0.02,
-        opacity: 1,
-        ease: "power2.inOut",
-        duration: 0.01,
-      }
-    );
+    gsap.to(".testimonial-intro h2 .char", {
+      stagger: 0.03,
+      opacity: 1,
+      ease: "power2.inOut",
+    });
+    gsap.to(".testimonial-intro p .char", {
+      stagger: 0.02,
+      opacity: 1,
+      ease: "power2.inOut",
+      duration: 0.01,
+    });
   },
 });
 
@@ -430,3 +423,15 @@ const closeMenu = () => {
 
 openBtn.addEventListener("click", openMenu);
 closeBtn.addEventListener("click", closeMenu);
+
+const year = document.querySelector(".year");
+year.innerText = new Date().getFullYear();
+
+window.addEventListener("scroll", (e) => {
+  const header = document.querySelector(".nav-header");
+  if (window.scrollY > 10) {
+    header.classList.add("bg");
+  } else {
+    header.classList.remove("bg");
+  }
+});
