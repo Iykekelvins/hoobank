@@ -154,6 +154,9 @@ button {
         &-right {
           transform: rotate(-45deg);
           margin-top: -0.75rem;
+          @media (max-width: 375px) {
+            margin-top: -0.65rem;
+          }
         }
       }
       .open {
@@ -189,7 +192,7 @@ button {
   z-index: 3;
   flex-direction: column;
   align-items: flex-start;
-  padding-top: 12rem;
+  padding-top: 8rem;
   transform: translateX(100%);
   li {
     overflow: hidden;
@@ -197,7 +200,7 @@ button {
       margin-bottom: 2rem;
       // transform: translateY(100%);
       a {
-        font-size: 4rem;
+        font-size: 2.5rem;
         color: #ffffff;
         text-decoration: none;
         // padding-left: 2rem;
@@ -242,6 +245,9 @@ button {
         span {
           color: #ffffff;
         }
+        @media (max-width: 375px) {
+          font-size: 0.85rem;
+        }
       }
     }
     &-text {
@@ -276,6 +282,10 @@ button {
           -webkit-text-fill-color: transparent;
           background-clip: text;
           text-fill-color: transparent;
+        }
+        @media (max-width: 375px) {
+          font-size: 3.5rem;
+          line-height: 4.5rem;
         }
       }
       .btn-cover {
@@ -518,6 +528,10 @@ button {
     .char {
       opacity: 0;
     }
+    @media (max-width: 375px) {
+      font-size: 1.875rem;
+      line-height: 2.8rem;
+    }
   }
   p {
     color: $light-grey;
@@ -534,15 +548,19 @@ button {
     padding-left: 2rem;
     padding-right: 2rem;
     flex-direction: column;
+    align-items: unset;
     gap: 4.5rem;
   }
 }
 
 .handle {
   &-left {
-    // h2 {
-    //   max-width: 38.875rem;
-    // }
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
     p {
       max-width: 35.625rem;
     }
@@ -604,6 +622,9 @@ button {
       &:first-child {
         margin-left: 14rem;
         height: 13.5rem;
+        @media (max-width: 375px) {
+          margin-left: 10rem;
+        }
       }
       &:nth-child(2) {
         position: relative;
@@ -646,9 +667,12 @@ button {
       img {
         height: 2.688rem;
       }
-      @media (max-width: 768px) {
-        justify-content: center;
-      }
+    }
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
   }
 }
@@ -661,6 +685,12 @@ button {
     p {
       max-width: 31.25rem;
     }
+    @media (max-width: 768px) {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
   }
   &-right {
     background-image: url(../assets/elipses.svg);
@@ -670,6 +700,9 @@ button {
     img {
       margin-top: 11rem;
       height: 25rem;
+      @media (max-width: 375px) {
+        height: 19rem;
+      }
     }
   }
   @media (max-width: 768px) {
@@ -681,7 +714,13 @@ button {
   p {
     max-width: 28.125rem;
     margin-right: 6rem;
-    @media (max-width: 768px) {
+  }
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    p {
       margin-right: 0;
       margin-top: -4.5rem;
     }
@@ -796,6 +835,10 @@ button {
     font-size: 3rem;
     font-weight: 600;
     line-height: 4.8rem;
+    @media (max-width: 375px) {
+      font-size: 1.875rem;
+      line-height: 2.8rem;
+    }
   }
   p {
     color: $light-grey;
@@ -815,6 +858,7 @@ button {
     padding-left: 2rem;
     padding-right: 2rem;
     flex-direction: column;
+    text-align: center;
   }
 }
 

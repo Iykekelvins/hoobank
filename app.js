@@ -363,8 +363,8 @@ const openMenu = () => {
     menu,
     {
       x: 0,
-      duration: 1,
-      ease: "back.out(1)",
+      // duration: 1,
+      ease: "circ.out",
     },
     "-=0.5"
   );
@@ -379,8 +379,8 @@ const openMenu = () => {
     {
       y: 0,
       opacity: 1,
-    },
-    "-=0.5"
+    }
+    // "-=0.45"
   );
 };
 
@@ -421,8 +421,8 @@ const closeMenu = () => {
     menu,
     {
       x: "100%",
-      duration: 1,
-      ease: "back.out(1)",
+      // duration: 1,
+      ease: "circ.out",
     }
     // "-=0.5"
   );

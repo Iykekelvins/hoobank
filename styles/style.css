@@ -161,6 +161,11 @@ button {
   transform: rotate(-45deg);
   margin-top: -0.75rem;
 }
+@media (max-width: 375px) {
+  .nav-header-navbar .nav-btns .close-right {
+    margin-top: -0.65rem;
+  }
+}
 .nav-header-navbar .nav-btns .open {
   margin-top: -2.5rem;
 }
@@ -192,7 +197,7 @@ button {
   z-index: 3;
   flex-direction: column;
   align-items: flex-start;
-  padding-top: 12rem;
+  padding-top: 8rem;
   transform: translateX(100%);
 }
 .mobile-menu li {
@@ -202,7 +207,7 @@ button {
   margin-bottom: 2rem;
 }
 .mobile-menu li div a {
-  font-size: 4rem;
+  font-size: 2.5rem;
   color: #ffffff;
   text-decoration: none;
   z-index: 4;
@@ -247,6 +252,11 @@ button {
 .hero-left-discount h4 span {
   color: #ffffff;
 }
+@media (max-width: 375px) {
+  .hero-left-discount h4 {
+    font-size: 0.85rem;
+  }
+}
 .hero-left-text {
   margin-top: 1.5rem;
   position: relative;
@@ -274,6 +284,12 @@ button {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+@media (max-width: 375px) {
+  .hero-left-text h1 {
+    font-size: 3.5rem;
+    line-height: 4.5rem;
+  }
 }
 .hero-left-text .btn-cover {
   display: flex;
@@ -493,6 +509,12 @@ button {
 .section h2 .char {
   opacity: 0;
 }
+@media (max-width: 375px) {
+  .section h2 {
+    font-size: 1.875rem;
+    line-height: 2.8rem;
+  }
+}
 .section p {
   color: rgba(255, 255, 255, 0.7);
   font-size: 1.125rem;
@@ -511,10 +533,19 @@ button {
     padding-left: 2rem;
     padding-right: 2rem;
     flex-direction: column;
+    align-items: unset;
     gap: 4.5rem;
   }
 }
 
+@media (max-width: 768px) {
+  .handle-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
 .handle-left p {
   max-width: 35.625rem;
 }
@@ -563,6 +594,11 @@ button {
   margin-left: 14rem;
   height: 13.5rem;
 }
+@media (max-width: 375px) {
+  .billing-left > img:first-child {
+    margin-left: 10rem;
+  }
+}
 .billing-left > img:nth-child(2) {
   position: relative;
   margin-top: -6rem;
@@ -604,13 +640,24 @@ button {
   height: 2.688rem;
 }
 @media (max-width: 768px) {
-  .billing-right-stores {
-    justify-content: center;
+  .billing-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 }
 
 .card-deal-left p {
   max-width: 31.25rem;
+}
+@media (max-width: 768px) {
+  .card-deal-left {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
 }
 .card-deal-right {
   background-image: url(../assets/elipses.svg);
@@ -621,6 +668,11 @@ button {
 .card-deal-right img {
   margin-top: 11rem;
   height: 25rem;
+}
+@media (max-width: 375px) {
+  .card-deal-right img {
+    height: 19rem;
+  }
 }
 @media (max-width: 768px) {
   .card-deal {
@@ -633,6 +685,12 @@ button {
   margin-right: 6rem;
 }
 @media (max-width: 768px) {
+  .testimonial-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
   .testimonial-intro p {
     margin-right: 0;
     margin-top: -4.5rem;
@@ -743,6 +801,12 @@ button {
   font-weight: 600;
   line-height: 4.8rem;
 }
+@media (max-width: 375px) {
+  .service h2 {
+    font-size: 1.875rem;
+    line-height: 2.8rem;
+  }
+}
 .service p {
   color: rgba(255, 255, 255, 0.7);
   font-size: 1.125rem;
@@ -764,6 +828,7 @@ button {
     padding-left: 2rem;
     padding-right: 2rem;
     flex-direction: column;
+    text-align: center;
   }
 }
 
