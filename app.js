@@ -248,7 +248,7 @@ ScrollTrigger.create({
   trigger: ".testimonials",
   start: "top bottom-=200",
   once: true,
-  markers: true,
+  // markers: true,
   onEnter: () => {
     gsap.to(".testimonials li", {
       y: 0,
