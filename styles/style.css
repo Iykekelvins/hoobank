@@ -83,7 +83,9 @@ button {
 
 .nav-header {
   position: sticky;
-  background: #00040f;
+  background: rgba(0, 4, 15, 0.5);
+  z-index: 4;
+  top: 0;
 }
 .nav-header-navbar {
   display: flex;
@@ -106,6 +108,7 @@ button {
 .nav-header-navbar .logo {
   display: flex;
   align-items: center;
+  z-index: 4;
 }
 .nav-header-navbar .logo h4 {
   color: #ffffff;
@@ -121,14 +124,50 @@ button {
   gap: 3.5rem;
   list-style-type: none;
 }
+.nav-header-navbar ul li {
+  overflow: hidden;
+}
 .nav-header-navbar ul a {
   color: #ffffff;
   text-decoration: none;
   transition: all 0.3s ease;
   font-size: 1rem;
+  z-index: 4;
 }
 .nav-header-navbar ul a:hover {
   color: rgba(255, 255, 255, 0.7);
+}
+@media (max-width: 600px) {
+  .nav-header-navbar ul {
+    display: none;
+  }
+}
+.nav-header-navbar .nav-btns {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 0;
+  z-index: 4;
+}
+.nav-header-navbar .nav-btns .close {
+  transform: translateY(-100px);
+}
+.nav-header-navbar .nav-btns .close-left {
+  transform: rotate(45deg);
+}
+.nav-header-navbar .nav-btns .close-right {
+  transform: rotate(-45deg);
+  margin-top: -0.75rem;
+}
+.nav-header-navbar .nav-btns .open {
+  margin-top: -2.5rem;
+}
+@media (min-width: 601px) {
+  .nav-header-navbar .nav-btns {
+    display: none;
+  }
 }
 .nav-header-navbar .hamburger {
   display: flex;
@@ -142,8 +181,37 @@ button {
   background: #ffffff;
   transition: all 0.3s ease;
 }
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #00040e;
+  z-index: 3;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 12rem;
+  transform: translateX(100%);
+}
+.mobile-menu li {
+  overflow: hidden;
+}
+.mobile-menu li div {
+  margin-bottom: 2rem;
+}
+.mobile-menu li div a {
+  font-size: 4rem;
+  color: #ffffff;
+  text-decoration: none;
+  z-index: 4;
+}
+.mobile-menu li div a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
 @media (min-width: 601px) {
-  .nav-header-navbar .hamburger {
+  .mobile-menu {
     display: none;
   }
 }
@@ -155,7 +223,6 @@ button {
 }
 .hero-left {
   padding-left: 8.5rem;
-  margin-top: 2.375rem;
 }
 .hero-left-discount {
   display: flex;
@@ -191,7 +258,7 @@ button {
   font-size: 4.5rem;
   font-weight: 600;
   letter-spacing: 0.01em;
-  line-height: 6.25rem;
+  line-height: 5.5rem;
 }
 .hero-left-text h1 div {
   overflow: hidden;
@@ -294,9 +361,6 @@ button {
 @media (max-width: 768px) {
   .hero-left {
     padding-left: 2rem;
-  }
-  .hero-left .hero-right-top {
-    display: none;
   }
 }
 @media (max-width: 375px) {
@@ -407,7 +471,7 @@ button {
     padding-right: 2rem;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .hero .hero-right {
     display: none;
   }
@@ -424,7 +488,10 @@ button {
   color: #ffffff;
   font-size: 3rem;
   font-weight: 600;
-  line-height: 4.8rem;
+  line-height: 3.8rem;
+}
+.section h2 .char {
+  opacity: 0;
 }
 .section p {
   color: rgba(255, 255, 255, 0.7);
@@ -455,7 +522,6 @@ button {
   display: flex;
   gap: 1.25rem;
   padding: 1.25rem;
-  transition: all 0.3s ease;
   border-radius: 20px;
   background: transparent;
   transform: translateY(100%);
@@ -532,6 +598,7 @@ button {
   align-items: center;
   gap: 2rem;
   margin-top: 3rem;
+  transform: translateY(100%);
 }
 .billing-right-stores img {
   height: 2.688rem;
@@ -583,9 +650,9 @@ button {
   padding: 3.75rem 2.5rem;
   height: 24.688rem;
   position: relative;
-  transition: all 0.3s ease;
   border-radius: 20px;
   background: #00040e;
+  transform: translateY(100%);
 }
 .testimonials li:hover {
   background: linear-gradient(144.39deg, #ffffff -278.56%, #6d6d6d -78.47%, #11101d 91.61%);
@@ -641,6 +708,9 @@ button {
   flex-wrap: wrap;
   margin-top: 6.5rem;
   padding: 0 11.5rem;
+}
+.partners li {
+  opacity: 0;
 }
 @media (max-width: 992px) {
   .partners {

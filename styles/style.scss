@@ -86,7 +86,9 @@ button {
 
 .nav-header {
   position: sticky;
-  background: #00040f;
+  background: rgba(0, 4, 15, 0.5);
+  z-index: 4;
+  top: 0;
   &-navbar {
     display: flex;
     align-items: center;
@@ -103,6 +105,7 @@ button {
     .logo {
       display: flex;
       align-items: center;
+      z-index: 4;
       h4 {
         color: #ffffff;
         font-size: 1.125rem;
@@ -117,16 +120,50 @@ button {
       align-items: center;
       gap: 3.5rem;
       list-style-type: none;
+      li {
+        overflow: hidden;
+      }
       a {
         color: #ffffff;
         text-decoration: none;
         transition: $transition;
         font-size: 1rem;
+        z-index: 4;
         &:hover {
           color: $light-grey;
         }
       }
+      @media (max-width: 600px) {
+        display: none;
+      }
     }
+
+    .nav-btns {
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 1rem 0;
+      z-index: 4;
+      .close {
+        transform: translateY(-100px);
+        &-left {
+          transform: rotate(45deg);
+        }
+        &-right {
+          transform: rotate(-45deg);
+          margin-top: -0.75rem;
+        }
+      }
+      .open {
+        margin-top: -2.5rem;
+      }
+      @media (min-width: 601px) {
+        display: none;
+      }
+    }
+
     .hamburger {
       display: flex;
       flex-direction: column;
@@ -138,10 +175,41 @@ button {
         background: #ffffff;
         transition: $transition;
       }
-      @media (min-width: 601px) {
-        display: none;
+    }
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #00040e;
+  z-index: 3;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 12rem;
+  transform: translateX(100%);
+  li {
+    overflow: hidden;
+    div {
+      margin-bottom: 2rem;
+      // transform: translateY(100%);
+      a {
+        font-size: 4rem;
+        color: #ffffff;
+        text-decoration: none;
+        // padding-left: 2rem;
+        z-index: 4;
+        &:hover {
+          color: $light-grey;
+        }
       }
     }
+  }
+  @media (min-width: 601px) {
+    display: none;
   }
 }
 
@@ -154,7 +222,7 @@ button {
   }
   &-left {
     padding-left: $padding;
-    margin-top: 2.375rem;
+    // margin-top: 2.375rem;
     &-discount {
       display: flex;
       align-items: center;
@@ -185,7 +253,7 @@ button {
         font-size: 4.5rem;
         font-weight: 600;
         letter-spacing: 0.01em;
-        line-height: 6.25rem;
+        line-height: 5.5rem;
         div {
           overflow: hidden;
           span {
@@ -311,9 +379,6 @@ button {
     }
     @media (max-width: 768px) {
       padding-left: 2rem;
-      .hero-right-top {
-        display: none;
-      }
     }
     @media (max-width: 375px) {
       .btn-cover {
@@ -432,7 +497,7 @@ button {
       padding-right: 2rem;
     }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     .hero-right {
       display: none;
     }
@@ -449,7 +514,10 @@ button {
     color: #ffffff;
     font-size: 3rem;
     font-weight: 600;
-    line-height: 4.8rem;
+    line-height: 3.8rem;
+    .char {
+      opacity: 0;
+    }
   }
   p {
     color: $light-grey;
@@ -487,10 +555,10 @@ button {
       display: flex;
       gap: 1.25rem;
       padding: 1.25rem;
-      transition: $transition;
       border-radius: 20px;
       background: transparent;
       transform: translateY(100%);
+      // margin-top: 5rem;
       &:hover {
         background: linear-gradient(
           144.39deg,
@@ -574,6 +642,7 @@ button {
       align-items: center;
       gap: 2rem;
       margin-top: 3rem;
+      transform: translateY(100%);
       img {
         height: 2.688rem;
       }
@@ -629,9 +698,9 @@ button {
     padding: 3.75rem 2.5rem;
     height: 24.688rem;
     position: relative;
-    transition: $transition;
     border-radius: 20px;
     background: #00040e;
+    transform: translateY(100%);
     &:hover {
       background: linear-gradient(
         144.39deg,
@@ -688,6 +757,9 @@ button {
   flex-wrap: wrap;
   margin-top: 6.5rem;
   padding: 0 11.5rem;
+  li {
+    opacity: 0;
+  }
   @media (max-width: 992px) {
     padding-left: 4rem;
     padding-right: 4rem;

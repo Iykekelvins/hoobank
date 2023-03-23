@@ -25,15 +25,29 @@
           <h4>Hoo<span>Bank</span></h4>
         </a>
         <ul>
-          <li><a href="">Home</a></li>
-          <li><a href="">About Us</a></li>
-          <li><a href="">Features</a></li>
-          <li><a href="">Solution</a></li>
+          <li>
+            <a href="">Home</a>
+          </li>
+          <li>
+            <a href="">About Us</a>
+          </li>
+          <li>
+            <a href="">Features</a>
+          </li>
+          <li>
+            <a href="">Solution</a>
+          </li>
         </ul>
-        <button class="hamburger">
-          <span class="hamburger-left"></span>
-          <span class="hamburger-right"></span>
-        </button>
+        <div class="nav-btns">
+          <button class="hamburger close">
+            <span class="hamburger-left close-left"></span>
+            <span class="hamburger-right close-right"></span>
+          </button>
+          <button class="hamburger open">
+            <span class="hamburger-left"></span>
+            <span class="hamburger-right"></span>
+          </button>
+        </div>
       </nav>
     </header>
     <section class="hero">
@@ -165,7 +179,7 @@
           You do the business, <br />
           we&apos;ll handle the money.
         </h2>
-        <p>
+        <p data-splitting="chars">
           With the right credit card, you can improve your financial life by
           building credit, earning rewards and saving money. But with hundreds
           of credit cards on the market.
@@ -219,11 +233,11 @@
         </div>
       </div>
       <div class="billing-right">
-        <h2>
+        <h2 data-splitting="chars">
           Easily control your <br />
           billing & invoicing.
         </h2>
-        <p>
+        <p data-splitting="chars">
           Elit enim sed massa etiam. Mauris eu adipiscing ultrices ametodio
           aenean neque. Fusce ipsum orci rhoncus aliporttitor integer platea
           placerat.
@@ -237,11 +251,11 @@
 
     <section class="card-deal section">
       <div class="card-deal-left">
-        <h2>
+        <h2 data-splitting="chars">
           Find a better card deal <br />
           in few easy steps.
         </h2>
-        <p>
+        <p data-splitting="chars">
           Arcu tortor, purus in mattis at sed integer faucibus. Aliquet quis
           aliquet eget mauris tortor.ç Aliquet ultrices ac, ametau.
         </p>
@@ -253,11 +267,11 @@
     </section>
 
     <section class="testimonial-intro section">
-      <h2>
+      <h2 data-splitting="chars">
         What people are <br />
         saying about us
       </h2>
-      <p>
+      <p data-splitting="chars">
         Everything you need to accept card payments and grow your business
         anywhere on the planet.
       </p>
@@ -408,8 +422,8 @@
     </ul>
     <div class="service">
       <div class="service-left">
-        <h2>Let&apos;s try our service now!</h2>
-        <p>
+        <h2 data-splitting="chars">Let&apos;s try our service now!</h2>
+        <p data-splitting="chars">
           Everything you need to accept card payments and grow your business
           anywhere on the planet.
         </p>
@@ -484,6 +498,22 @@
         </ul>
       </div>
     </footer>
+    <ul class="mobile-menu">
+      <li>
+        <div>
+          <a href="">Home</a>
+        </div>
+      </li>
+      <li>
+        <div><a href="">About Us</a></div>
+      </li>
+      <li>
+        <div><a href="">Features</a></div>
+      </li>
+      <li>
+        <div><a href="">Solution</a></div>
+      </li>
+    </ul>
     <div class="cursor"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
