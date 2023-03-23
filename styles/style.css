@@ -40,6 +40,16 @@ body {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
 }
+body.fixed::-webkit-scrollbar {
+  width: 0;
+}
+body::-webkit-scrollbar {
+  width: 5px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(92, 225, 230);
+  border-radius: 8px;
+}
 
 a {
   text-decoration: none;
@@ -108,15 +118,27 @@ button {
 .nav-header-navbar .logo {
   display: flex;
   align-items: center;
-  z-index: 4;
+  z-index: 5;
+  position: relative;
+  transform: translate(38vw, 45vh);
+  overflow: hidden;
 }
 .nav-header-navbar .logo h4 {
   color: #ffffff;
   font-size: 1.125rem;
   font-weight: 600;
+  transform: translateY(100px);
 }
 .nav-header-navbar .logo h4 span {
   color: rgb(92, 225, 230);
+}
+.nav-header-navbar .logo img {
+  transform: translateY(100px);
+}
+@media (max-width: 375px) {
+  .nav-header-navbar .logo {
+    transform: translate(30vw, 45vh);
+  }
 }
 .nav-header-navbar ul {
   display: flex;
@@ -203,11 +225,17 @@ button {
   padding-top: 8rem;
   transform: translateX(100%);
 }
+.mobile-menu ul {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 .mobile-menu li {
   overflow: hidden;
 }
 .mobile-menu li div {
   margin-bottom: 2rem;
+  padding: 0 3rem;
 }
 .mobile-menu li div a {
   font-size: 2.5rem;
@@ -287,6 +315,9 @@ button {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+.hero-left-text h1 .span-cover {
+  margin-top: -0.5rem;
 }
 @media (max-width: 375px) {
   .hero-left-text h1 {
@@ -399,6 +430,8 @@ button {
   .hero-left button {
     margin: 2rem auto 0;
     width: 90%;
+    transform: translateY(100%);
+    opacity: 0;
   }
 }
 @media (min-width: 375px) {
@@ -477,6 +510,8 @@ button {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  transform: translateY(100%);
+  opacity: 0;
 }
 .hero-stats div h3 {
   color: #ffffff;
@@ -491,6 +526,9 @@ button {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+}
+.hero-stats svg {
+  transform: translateY(100%);
 }
 @media (max-width: 992px) {
   .hero-stats {
@@ -982,6 +1020,32 @@ button {
   .cursor {
     display: none;
   }
+}
+
+.preloader {
+  background: #00040e;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.preloader-inner div {
+  height: 2px;
+  background: #ffffff;
+  width: 0%;
+  position: relative;
+}
+.preloader-inner span {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-style: italic;
+  position: absolute;
+  right: 0;
 }
 
 .word {

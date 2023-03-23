@@ -20,24 +20,119 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
-// gsap.set(".handle-right li", {
-//   y: "100%",
-// });
+// setInterval(() => {
+const preloader = document.querySelector(".preloader");
+const bg = preloader.querySelector(".preloader-inner div");
+const number = preloader.querySelector("span");
 
-const heroTl = gsap.timeline({
+const logo = document.querySelector(".logo");
+
+let heroTl = gsap.timeline({
   default: {
     ease: "power2.inOut",
-    duration: 2,
+    // duration: 2,
   },
 });
 
-heroTl.to(".hero h1 span", {
-  y: 0,
-  opacity: 1,
-  stagger: 0.05,
-  ease: "back.out(2)",
-  duration: 1,
+heroTl.pause();
+
+document.body.classList.add("fixed");
+const preloaderTl = gsap.timeline({
+  default: { ease: "circ.out" },
 });
+
+preloaderTl.set("html body", {
+  positon: "fixed",
+});
+
+preloaderTl.to(bg, {
+  width: "100%",
+  duration: 7,
+});
+
+preloaderTl.to(bg, {
+  opacity: 0,
+  delay: 0.5,
+});
+
+preloaderTl.to([".logo h4, .logo img"], {
+  y: 0,
+  stagger: 0.05,
+  duration: 0.5,
+});
+
+preloaderTl.to(
+  ".logo",
+  {
+    transform: "translate(0,0)",
+    duration: 0.85,
+  },
+  "+=0.5"
+);
+
+preloaderTl.fromTo(
+  [".nav-header ul", ".nav-btns"],
+  {
+    opacity: 0,
+  },
+  {
+    opacity: 1,
+  }
+);
+
+preloaderTl.to(".preloader", {
+  opacity: 0,
+  duration: 1,
+  pointerEvents: "none",
+  onComplete: () => {
+    setTimeout(() => {
+      heroTl.play();
+      document.body.classList.remove("fixed");
+    }, -1200);
+  },
+});
+
+setInterval(() => {
+  number.innerText = Math.floor(bg.style.width.slice(0, -1)) + "%";
+}, 100);
+
+// }, 1000);
+
+const mql = window.matchMedia("screen and (max-width: 992px)");
+
+heroTl.to(
+  ".hero h1 span",
+  {
+    y: 0,
+    opacity: 1,
+    stagger: 0.05,
+    ease: "back.out(2)",
+    duration: 1,
+  }
+  // "-=0.5"
+);
+
+heroTl.fromTo(
+  ".btn-cover",
+  {
+    y: "100%",
+    opacity: 0,
+  },
+  {
+    y: 0,
+    opacity: 1,
+  }
+);
+
+heroTl.fromTo(
+  ".hero-right",
+  {
+    opacity: 0,
+  },
+  {
+    opacity: 1,
+  }
+);
 
 heroTl.fromTo(
   ".hero-right .card-one",
@@ -82,8 +177,17 @@ heroTl.fromTo(
     width: "100%",
     duration: 1,
     opacity: 1,
-  }
-  // "-=0.5"
+  },
+  `${mql.matches ? "-=1.25" : "-=1"}`
+);
+
+heroTl.to(
+  ".hero .get-started",
+  {
+    y: 0,
+    opacity: 1,
+  },
+  `${mql.matches ? "-=1.25" : ""}`
 );
 
 heroTl.fromTo(
@@ -96,8 +200,27 @@ heroTl.fromTo(
     y: 0,
     opacity: 1,
   },
-  "-=0.5"
+  `${mql.matches ? "-=0.5" : "-=1"}`
 );
+
+ScrollTrigger.create({
+  trigger: ".hero-stats",
+  start: "top bottom-=100",
+  once: true,
+  // markers: true,
+  onEnter: () => {
+    heroTl.to(
+      [".hero-stats div", ".hero-stats svg"],
+
+      {
+        y: 0,
+        opacity: 1,
+        ease: "power2.inOut",
+        // duration: 0.05,
+      }
+    );
+  },
+});
 
 ScrollTrigger.create({
   trigger: ".handle",
@@ -365,13 +488,16 @@ const openMenu = () => {
   tl.fromTo(
     ".mobile-menu li div",
     {
-      y: "100%",
+      x: "150%",
       opacity: 0,
-      marginLeft: "2rem",
+      // marginLeft: "2rem",
     },
     {
-      y: 0,
+      x: 0,
       opacity: 1,
+      ease: "back.out(2)",
+      duration: 1,
+      stagger: 0.05,
     }
     // "-=0.45"
   );
@@ -401,11 +527,14 @@ const closeMenu = () => {
   tl.fromTo(
     ".mobile-menu li div",
     {
-      y: 0,
+      x: 0,
     },
     {
-      y: "100%",
+      x: "150%",
       opacity: 0,
+      ease: "back.in(2)",
+      duration: 1,
+      stagger: 0.05,
     },
     "-=0.5"
   );
@@ -416,6 +545,7 @@ const closeMenu = () => {
       x: "100%",
       // duration: 1,
       ease: "circ.out",
+      delay: 0.25,
     }
     // "-=0.5"
   );
@@ -427,7 +557,7 @@ closeBtn.addEventListener("click", closeMenu);
 const year = document.querySelector(".year");
 year.innerText = new Date().getFullYear();
 
-window.addEventListener("scroll", (e) => {
+window.addEventListener("scroll", () => {
   const header = document.querySelector(".nav-header");
   if (window.scrollY > 10) {
     header.classList.add("bg");

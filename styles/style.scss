@@ -37,6 +37,19 @@ body {
   background: #00040f;
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
+  &.fixed {
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(92, 225, 230, 1);
+    border-radius: 8px;
+  }
 }
 
 a {
@@ -106,14 +119,24 @@ button {
     .logo {
       display: flex;
       align-items: center;
-      z-index: 4;
+      z-index: 5;
+      position: relative;
+      transform: translate(38vw, 45vh);
+      overflow: hidden;
       h4 {
         color: #ffffff;
         font-size: 1.125rem;
         font-weight: 600;
+        transform: translateY(100px);
         span {
           color: rgba(92, 225, 230, 1);
         }
+      }
+      img {
+        transform: translateY(100px);
+      }
+      @media (max-width: 375px) {
+        transform: translate(30vw, 45vh);
       }
     }
     ul {
@@ -198,11 +221,17 @@ button {
   align-items: flex-start;
   padding-top: 8rem;
   transform: translateX(100%);
+  ul {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
   li {
     overflow: hidden;
     div {
       margin-bottom: 2rem;
       // transform: translateY(100%);
+      padding: 0 3rem;
       a {
         font-size: 2.5rem;
         color: #ffffff;
@@ -286,6 +315,9 @@ button {
           -webkit-text-fill-color: transparent;
           background-clip: text;
           text-fill-color: transparent;
+        }
+        .span-cover {
+          margin-top: -0.5rem;
         }
         @media (max-width: 375px) {
           font-size: 3.5rem;
@@ -409,6 +441,8 @@ button {
       button {
         margin: 2rem auto 0;
         width: 90%;
+        transform: translateY(100%);
+        opacity: 0;
       }
     }
     @media (min-width: 375px) {
@@ -491,6 +525,8 @@ button {
       display: flex;
       align-items: center;
       gap: 1.5rem;
+      transform: translateY(100%);
+      opacity: 0;
       h3 {
         color: #ffffff;
         font-size: 2.5rem;
@@ -513,6 +549,9 @@ button {
         background-clip: text;
         text-fill-color: transparent;
       }
+    }
+    svg {
+      transform: translateY(100%);
     }
     @media (max-width: 992px) {
       padding-left: 4rem;
@@ -1003,6 +1042,37 @@ button {
   z-index: 5;
   @media (max-width: 820px) {
     display: none;
+  }
+}
+
+.preloader {
+  background: #00040e;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  &-inner {
+    // display: flex;
+
+    div {
+      height: 2px;
+      background: #ffffff;
+      width: 0%;
+      position: relative;
+    }
+    span {
+      color: #ffffff;
+      font-size: 1.5rem;
+      font-style: italic;
+      position: absolute;
+      right: 0;
+    }
   }
 }
 
