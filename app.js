@@ -222,7 +222,7 @@ ScrollTrigger.create({
   once: true,
   // markers: true,
   onEnter: () => {
-    gsap.to(
+    heroTl.to(
       ".handle-left h2 .char",
 
       {
@@ -232,7 +232,7 @@ ScrollTrigger.create({
         // duration: 0.05,
       }
     );
-    gsap.to(
+    heroTl.to(
       ".handle-left p .word",
 
       {
@@ -534,4 +534,21 @@ window.addEventListener("scroll", () => {
   } else {
     header.classList.remove("bg");
   }
+});
+
+const links = document.querySelectorAll("a");
+
+links.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (e.target.classList.contains("mobile-link")) {
+      closeMenu();
+
+      setTimeout(() => {
+        lenis.scrollTo(e.target.hash, { offset: -60 });
+      }, 2600);
+    } else {
+      lenis.scrollTo(e.target.hash, { offset: -60 });
+    }
+  });
 });
