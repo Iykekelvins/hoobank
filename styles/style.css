@@ -145,6 +145,7 @@ button {
   align-items: center;
   gap: 3.5rem;
   list-style-type: none;
+  opacity: 0;
 }
 .nav-header-navbar ul li {
   overflow: hidden;
@@ -159,7 +160,7 @@ button {
 .nav-header-navbar ul a:hover {
   color: rgba(255, 255, 255, 0.7);
 }
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .nav-header-navbar ul {
     display: none;
   }
@@ -172,6 +173,7 @@ button {
   gap: 2rem;
   padding: 1rem 0;
   z-index: 4;
+  opacity: 0;
 }
 .nav-header-navbar .nav-btns .close {
   transform: translateY(-100px);
@@ -191,7 +193,7 @@ button {
 .nav-header-navbar .nav-btns .open {
   margin-top: -2.5rem;
 }
-@media (min-width: 601px) {
+@media (min-width: 701px) {
   .nav-header-navbar .nav-btns {
     display: none;
   }
@@ -246,7 +248,7 @@ button {
 .mobile-menu li div a:hover {
   color: rgba(255, 255, 255, 0.7);
 }
-@media (min-width: 601px) {
+@media (min-width: 701px) {
   .mobile-menu {
     display: none;
   }
@@ -606,6 +608,12 @@ button {
 .handle-left p {
   max-width: 35.625rem;
 }
+.handle-left p .word {
+  opacity: 0;
+}
+.handle-left h2 .char {
+  opacity: 0;
+}
 .handle-right li {
   display: flex;
   gap: 1.25rem;
@@ -639,9 +647,6 @@ button {
   justify-content: center;
   border-radius: 50%;
   animation: glow 1.2s infinite linear alternate;
-}
-.handle .char {
-  opacity: 0;
 }
 
 .billing-left {
@@ -689,6 +694,12 @@ button {
 .billing-right p {
   max-width: 29.375rem;
 }
+.billing-right p .word {
+  opacity: 0;
+}
+.billing-right h2 .char {
+  opacity: 0;
+}
 .billing-right-stores {
   display: flex;
   align-items: center;
@@ -707,12 +718,15 @@ button {
     text-align: center;
   }
 }
-.billing .char {
+
+.card-deal-left h2 .char {
   opacity: 0;
 }
-
 .card-deal-left p {
   max-width: 31.25rem;
+}
+.card-deal-left p .word {
+  opacity: 0;
 }
 @media (max-width: 768px) {
   .card-deal-left {
@@ -747,6 +761,12 @@ button {
   max-width: 28.125rem;
   margin-right: 6rem;
 }
+.testimonial-intro p .word {
+  opacity: 0;
+}
+.testimonial-intro h2 .char {
+  opacity: 0;
+}
 @media (max-width: 768px) {
   .testimonial-intro {
     display: flex;
@@ -758,9 +778,6 @@ button {
     margin-right: 0;
     margin-top: -4.5rem;
   }
-}
-.testimonial-intro .char {
-  opacity: 0;
 }
 
 .testimonials {
@@ -867,6 +884,9 @@ button {
   font-weight: 600;
   line-height: 4.8rem;
 }
+.service h2 .char {
+  opacity: 0;
+}
 @media (max-width: 375px) {
   .service h2 {
     font-size: 1.875rem;
@@ -880,6 +900,9 @@ button {
   line-height: 1.9rem;
   padding-top: 1rem;
   max-width: 27.813rem;
+}
+.service p .word {
+  opacity: 0;
 }
 @media (max-width: 992px) {
   .service {
