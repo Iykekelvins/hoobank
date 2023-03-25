@@ -41,10 +41,6 @@ const preloaderTl = gsap.timeline({
   default: { ease: "circ.out" },
 });
 
-preloaderTl.set("html body", {
-  positon: "fixed",
-});
-
 preloaderTl.to(bg, {
   width: "100%",
   duration: 7,
@@ -66,6 +62,7 @@ preloaderTl.to(
   {
     transform: "translate(0,0)",
     duration: 0.85,
+    onComplete: () => window.scrollTo(0, 0),
   },
   "+=0.5"
 );
@@ -93,6 +90,7 @@ setInterval(() => {
 // }, 1000);
 
 const mql = window.matchMedia("screen and (max-width: 992px)");
+const mq2 = window.matchMedia("screen and (max-width: 375px)");
 
 heroTl.to(
   ".hero h1 span",
@@ -240,7 +238,8 @@ ScrollTrigger.create({
         opacity: 1,
         ease: "power2.inOut",
         duration: 1,
-      }
+      },
+      "-=0.5"
     );
   },
 });
@@ -333,12 +332,25 @@ ScrollTrigger.create({
       opacity: 1,
       ease: "power2.inOut",
     });
-    gsap.to(".testimonial-intro p .word", {
-      stagger: 0.03,
-      opacity: 1,
-      ease: "power2.inOut",
-      duration: 1,
-    });
+  },
+});
+
+ScrollTrigger.create({
+  trigger: ".testimonial-intro p",
+  start: "top bottom-=100",
+  once: true,
+  // markers: true,
+  onEnter: () => {
+    gsap.to(
+      ".testimonial-intro p .word",
+      {
+        stagger: 0.03,
+        opacity: 1,
+        ease: "power2.inOut",
+        duration: 1,
+      },
+      "-=0.5"
+    );
   },
 });
 
@@ -545,10 +557,10 @@ links.forEach((link) => {
       closeMenu();
 
       setTimeout(() => {
-        lenis.scrollTo(e.target.hash, { offset: -60 });
+        lenis.scrollTo(e.target.hash, { offset: mq2.matches ? -60 : -150 });
       }, 2600);
     } else {
-      lenis.scrollTo(e.target.hash, { offset: -60 });
+      lenis.scrollTo(e.target.hash, { offset: mq2.matches ? -60 : -150 });
     }
   });
 });

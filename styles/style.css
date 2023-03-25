@@ -162,6 +162,9 @@ button {
   font-size: 1rem;
   z-index: 4;
 }
+.nav-header-navbar ul a:focus-within {
+  color: rgba(255, 255, 255, 0.7);
+}
 .nav-header-navbar ul a:hover {
   color: rgba(255, 255, 255, 0.7);
 }
@@ -251,6 +254,9 @@ button {
   z-index: 4;
 }
 .mobile-menu li div a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+.mobile-menu li:focus-within a {
   color: rgba(255, 255, 255, 0.7);
 }
 @media (min-width: 701px) {
