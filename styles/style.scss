@@ -160,10 +160,10 @@ button {
         font-size: 1rem;
         z-index: 4;
         &:focus-within {
-          color: $light-grey;
+          color: #33bbcf;
         }
         &:hover {
-          color: $light-grey;
+          color: #33bbcf;
         }
       }
       @media (max-width: 700px) {
@@ -247,15 +247,13 @@ button {
         color: #ffffff;
         text-decoration: none;
         z-index: 4;
-
-        &:hover {
-          color: $light-grey;
+        transition: $transition;
+        &:focus-within {
+          color: #33bbcf;
         }
-      }
-    }
-    &:focus-within {
-      a {
-        color: $light-grey;
+        &:hover {
+          color: #33bbcf;
+        }
       }
     }
   }
@@ -1013,6 +1011,7 @@ button {
           color: $light-grey;
           font-size: 1rem;
           font-weight: 400;
+          transition: $transition;
         }
         &:first-child {
           margin-bottom: 1.5rem;
@@ -1024,6 +1023,11 @@ button {
           @media (max-width: 768px) {
             margin-bottom: 0.75rem;
             margin-top: 1.5rem;
+          }
+        }
+        &:hover {
+          a {
+            color: #33bbcf;
           }
         }
       }

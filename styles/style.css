@@ -163,10 +163,10 @@ button {
   z-index: 4;
 }
 .nav-header-navbar ul a:focus-within {
-  color: rgba(255, 255, 255, 0.7);
+  color: #33bbcf;
 }
 .nav-header-navbar ul a:hover {
-  color: rgba(255, 255, 255, 0.7);
+  color: #33bbcf;
 }
 @media (max-width: 700px) {
   .nav-header-navbar ul {
@@ -252,12 +252,13 @@ button {
   color: #ffffff;
   text-decoration: none;
   z-index: 4;
+  transition: all 0.3s ease;
+}
+.mobile-menu li div a:focus-within {
+  color: #33bbcf;
 }
 .mobile-menu li div a:hover {
-  color: rgba(255, 255, 255, 0.7);
-}
-.mobile-menu li:focus-within a {
-  color: rgba(255, 255, 255, 0.7);
+  color: #33bbcf;
 }
 @media (min-width: 701px) {
   .mobile-menu {
@@ -974,6 +975,7 @@ button {
   color: rgba(255, 255, 255, 0.7);
   font-size: 1rem;
   font-weight: 400;
+  transition: all 0.3s ease;
 }
 .footer-top ul li:first-child {
   margin-bottom: 1.5rem;
@@ -988,6 +990,9 @@ button {
     margin-bottom: 0.75rem;
     margin-top: 1.5rem;
   }
+}
+.footer-top ul li:hover a {
+  color: #33bbcf;
 }
 .footer-bottom {
   padding-top: 1.875rem;

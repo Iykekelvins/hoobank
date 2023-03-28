@@ -283,7 +283,8 @@ ScrollTrigger.create({
         opacity: 1,
         ease: "power2.inOut",
         duration: 1,
-      }
+      },
+      "-=0.5"
     );
   },
 });
@@ -312,12 +313,16 @@ ScrollTrigger.create({
       opacity: 1,
       ease: "power2.inOut",
     });
-    gsap.to(".card-deal p .word", {
-      stagger: 0.03,
-      opacity: 1,
-      ease: "power2.inOut",
-      duration: 1,
-    });
+    gsap.to(
+      ".card-deal p .word",
+      {
+        stagger: 0.03,
+        opacity: 1,
+        ease: "power2.inOut",
+        duration: 1,
+      },
+      "-=0.5"
+    );
   },
 });
 
@@ -332,15 +337,6 @@ ScrollTrigger.create({
       opacity: 1,
       ease: "power2.inOut",
     });
-  },
-});
-
-ScrollTrigger.create({
-  trigger: ".testimonial-intro p",
-  start: "top bottom-=100",
-  once: true,
-  // markers: true,
-  onEnter: () => {
     gsap.to(
       ".testimonial-intro p .word",
       {
@@ -367,18 +363,6 @@ ScrollTrigger.create({
       ease: "circ.out",
       duration: 0.8,
     });
-    gsap.fromTo(
-      ".testimonial-intro p .char",
-      {
-        opacity: 0,
-      },
-      {
-        stagger: 0.02,
-        opacity: 1,
-        ease: "power2.inOut",
-        duration: 0.01,
-      }
-    );
   },
 });
 
@@ -393,12 +377,16 @@ ScrollTrigger.create({
       opacity: 1,
       ease: "power2.inOut",
     });
-    gsap.to(".service-left  p .word", {
-      stagger: 0.03,
-      opacity: 1,
-      ease: "power2.inOut",
-      duration: 1,
-    });
+    gsap.to(
+      ".service-left  p .word",
+      {
+        stagger: 0.03,
+        opacity: 1,
+        ease: "power2.inOut",
+        duration: 1,
+      },
+      "-=0.5"
+    );
   },
 });
 
